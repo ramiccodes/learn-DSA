@@ -27,3 +27,26 @@
 // Then we repeat that same process (Take the first item and compare it to the first item in the second array and the second item and so on)
 // [3, 4, 5, 8]   [1, 2, 6, 7]
 // [1, 2, 3, 4, 5, 6, 7, 8]
+
+// Merging Arrays
+// - Writing a function to merge sorted arrays
+// - We assume the arrays are sorted and all you have to do is return the combination of those two sorted arrays
+// - In order to implement merge sort, it's useful to first implement a function responsible for merging two sorted arrays
+// - Given two arrays which are sorted, this helper function should create a new array which is also sorted, and consists of all of the elements in the two input arrays
+// - This function should run in O(n + m) time and O(n + m) space and SHOULD NOT modify the parameters passed on it.
+// (n and m represents the two arrays being merged, it means that we're iterating over each item in each array once)
+
+// Merging Arrays Psuedocode
+//  - Define a function that takes two inputs 
+//  - Create an empty array that you'll return in the end
+//  - You start with the smallest values in each input array
+//  - Have two counters, one called i and one called j
+//  - They both need to start at zero (i and j)
+//  - Colt recommends using while loops
+//  - While there are still values we haven't looked at, 
+// meaning that while i and j both haven't hit the end of their respective arrays
+//    - If the value in the first array is SMALLER than the value in the second array,
+//   push the value in the first array into our results array and move on to the next value in the first array
+//    - If the value in the first array is LARGER than the value in the second array, push the value in the
+//   second array into our results array and move on to the next value in the second array
+//  - Once we finish one array, we just push all the remaining values from the other array in
