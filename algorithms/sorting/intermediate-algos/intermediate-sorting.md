@@ -20,6 +20,6 @@ Why learn this?
 Compared to bubble sorting an array of 100000 elements, it takes about 2 seconds to run
 While, merge sort finishes running almost immediately
 
-Faster Sorts
+Faster Sorts  
 - There is a family of sorting algorithms that can improve time complexity from O(n^2) to O(n log n)
 - The more efficient algorithms are much less simple, and generally take longer to understand
