@@ -100,6 +100,15 @@ function merge(arr1, arr2) {
     results.push(arr2[j]);
     j++;
   }
-  
+
   return results;
 }
+
+// Merge Sort Pseudocode
+// - Break up the array into halves until you have arrays that are empty or have one element
+// (Colt suggests to use .slice. Single array into a half, two halves)
+// You go from zero until the middle of the array and middle of the array to zero to give you two halves
+// After you get those two halves, you're going to call the Merge Sort function again and repeat the process recursively
+// The base case is when the array's length is less than or equal to one
+// Once we have those small arrays, we merge them back using our merge function
+// Once the array has been merged back together, return the merged (and sorted!) array
