@@ -50,3 +50,56 @@
 //    - If the value in the first array is LARGER than the value in the second array, push the value in the
 //   second array into our results array and move on to the next value in the second array
 //  - Once we finish one array, we just push all the remaining values from the other array in
+
+function merge(arr1, arr2) {
+  let sortedArr = [];
+  let i = 0;
+  let j = 0;
+
+  while (i !== arr1.length - 1 || j !== arr2.length) {
+    if (arr1[i] < arr2[j]) {
+      sortedArr.push(arr1[i])
+      i++;
+    } else {
+      sortedArr.push(arr2[j])
+      j++
+    }
+  }
+
+  if (i < j) {
+    sortedArr.push(arr1[i]);
+  } else {
+    sortedArr.push(arr2[j]);
+  }
+
+  return sortedArr
+}
+
+// Colt's Solution
+function merge(arr1, arr2) {
+  let results = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < arr1.length && j < arr2.length) {
+    if (arr2[j] > arr1[i]) {
+      results.push(arr1[i]);
+      i++;
+    } else {
+      results.push(arr2[j]);
+      j++;
+    }
+  }
+
+  while (i < arr1.length) {
+    results.push(arr1[i]);
+    i++;
+  }
+
+  while (j < arr2.length) {
+    results.push(arr2[j]);
+    j++;
+  }
+  
+  return results;
+}
