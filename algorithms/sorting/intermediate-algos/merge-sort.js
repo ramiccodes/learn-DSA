@@ -174,3 +174,33 @@ mergeSort([10,24,76,73])
 // return merge(left, right)
 // [10,24,73,76]
 
+
+// Big O of mergeSort
+// Time Complexity (Worst): O(n log n)
+// Time Complexity (Average): O(n log n)
+// Time Complexity (Best): O(n log n)
+// Space Complexity: O(n)
+
+// Why is it n log n?
+// - If we have 8 items in an array, how many times do we have to split in order to
+// get single element arrays?
+// The answer is 3
+// - But if instead we had an array of 32,
+// The answer is 5
+
+// - This is O(log n) decompositions (Base two: Two of what power gives us n?)
+// - If we have 8 elements, we take 2 and raise it 3 times to get 8
+// - If we have 32 elements, we take 2 and raise it 5 times to get 32
+
+// - As n grows the length of this array, the number of times we have to split it
+// grows at the rate of log n
+
+// - Each time we decompose it, we have O(n) comparisons
+// The merge function has the time complexity of O(n), since it makes the same amount
+// of comparisons as the length of the array, since it is not modified in any way
+
+// That's why the time complexity for merge sort is O(n log n)
+
+// O(n log n) is better than O(n^2) but worse than O(n), O(log n), and O(1)
+
+// If we want a data agnostic sorting algorithm, the best we can do is O(n log n)
