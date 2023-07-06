@@ -89,6 +89,7 @@ function merge(arr1, arr2) {
       results.push(arr2[j]);
       j++;
     }
+
   }
 
   while (i < arr1.length) {
@@ -112,3 +113,64 @@ function merge(arr1, arr2) {
 // The base case is when the array's length is less than or equal to one
 // Once we have those small arrays, we merge them back using our merge function
 // Once the array has been merged back together, return the merged (and sorted!) array
+
+function mergeSort(arr) {
+  let middleIndex = Math.ceil(arr.length / 2);
+  let firstHalf = arr.slice(0, middleIndex);
+  let secondHalf = arr.slice(-middleIndex);
+
+  if (arr.length <= 1) {
+    return;
+  }
+
+  console.log(firstHalf)
+  console.log(secondHalf)
+
+  mergeSort(firstHalf);
+  mergeSort(secondHalf);
+}
+
+
+// How to get the all the individual array and merge them together?
+
+// Colt's Solution
+function mergeSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  let mid = Math.floor(arr.length / 2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
+
+  return merge(left, right);
+}
+mergeSort([10,24,76,73])
+
+// [10,24,76,73]
+
+// left = mergeSort([10,24])
+// arr.length not less than or  equal to 1, so keep going
+// left = mergeSort([10]), return [10]
+// left = [10]
+// right = mergeSort([24]), return [24]
+// right = [24]
+// merge(left, right)
+// return [10,24]
+// left = [10,24]
+
+// right = mergeSort([76,73])
+// arr.length not less than or  equal to 1, so keep going
+// left = mergeSort([76]), return [76]
+// left = [76]
+// right = mergeSort([73]), return [73]
+// right = [73]
+// merge(left, right)
+// return [73, 76]
+// right = [73, 76]
+
+// left = [10,24]
+// right = [73,76]
+// return merge(left, right)
+// [10,24,73,76]
+
