@@ -26,3 +26,21 @@
 // We pick the pivot point as 7 and figure out where it should go
 // [1, 2, 3, 4, 5, 6, 7, 8]
 // Now it's a sorted array!
+
+// First part of quick sort
+// Pivot / Partition helper
+
+// - In order to implement merge sort, it's useful to first implement a function responsible arranging elements
+// in an array on either side of a pivot
+// - Given an array, this helper function should designate an element as the pivot 
+// - It should then rearrange elements in an array so that all the values less than the pivot
+// are moved to the left of the pivot, and all values greater than the pivot are moved to the right of the pivot
+// - The order of elements on either side doesn't matter, it just needs to be less than or greater than the pivot
+// - The helper should do it in place, that is, it should not create a new array
+// - When complete, the helper should return the index of the pivot
+
+// Picking a pivot
+// - The runtime of quick sort depends in part on how one selects the pivot
+// - Ideally, the pivot should be chosen so that it's roughly the median value in the data set you're storing
+// (If we could perfectly get it, we would pick the middle value of our sorted data, so that the left and right side should be equal)
+// - For simplicity, we'll always choose the pivot to be the first element (there's consequences to this, concerning Big O)
