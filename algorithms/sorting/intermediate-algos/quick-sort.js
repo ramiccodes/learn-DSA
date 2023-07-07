@@ -44,3 +44,32 @@
 // - Ideally, the pivot should be chosen so that it's roughly the median value in the data set you're storing
 // (If we could perfectly get it, we would pick the middle value of our sorted data, so that the left and right side should be equal)
 // - For simplicity, we'll always choose the pivot to be the first element (there's consequences to this, concerning Big O)
+
+// Pivot Pseudocode
+// - It will help to accept three arguments, an array, a start index, and an end index 
+// (these can default to 0 and the array length minus 1, respectively)
+// - Grab the pivot from the start of the array
+// - Store the current pivot INDEX in a variable (this will keep track of where the pivot should end up)
+// - Loop through the array from the start till the end 
+//   - If pivot > current element, increment the pivot index 
+//     variable and swap the current element with the element at the pivot index
+// - Swap the starting element (i.e. the pivot) with the pivot index
+// - Return the pivot index
+
+function pivot(arr, start = 0, end = arr.length - 1) {
+  let pivot = arr[0];
+  let pivotIndex = 0;
+
+  for (let i = start; i < end; i++) {
+    if (pivot > arr[i]) {
+      pivotIndex++;
+      [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]]
+    }
+  }
+
+  [arr[0], arr[pivotIndex]] = [arr[pivotIndex], arr[0]]
+
+  return pivotIndex;
+}
+
+pivot([3,1,4,2,5]);
