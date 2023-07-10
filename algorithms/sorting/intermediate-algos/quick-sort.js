@@ -108,3 +108,9 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
 
   return arr;
 }
+
+// Big O of Quick Sort
+// Time Complexity (Worst): O(n^2)
+// Time Complexity (Average): O(n log n)
+// Time Complexity (Best): O(n log n)
+// Space Complexity: O(log n)
