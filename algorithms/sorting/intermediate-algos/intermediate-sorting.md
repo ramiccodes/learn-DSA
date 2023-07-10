@@ -23,3 +23,22 @@ While, merge sort finishes running almost immediately
 Faster Sorts  
 - There is a family of sorting algorithms that can improve time complexity from O(n^2) to O(n log n)
 - The more efficient algorithms are much less simple, and generally take longer to understand
+
+All of these sort algorithms are grouped together in a group called Comparison Sorting Algorithms.
+This means that whether we're talking about bubble sort or something more advanced like quick sort,
+beneath the surface, the base comparison that we're doing is between TWO items at any given point
+
+Comparison sort just means we're comparing two things. That's the most we compare at any given time.
+Less than vs Greater than, and then deciding where that one item goes.
+
+Average Time Complexity
+- Bubble Sort - O(n^2)
+- Insertion Sort - O(n^2)
+- Selection Sort - O(n^2)
+- Quick Sort - O(n log (n))
+- Merge Sort - O(n log (n))
+
+Are there faster sorting algorithms? Faster than O(n log (n))?
+The answer is YES, but not by making comparisons
+
+The best average case time complexity that we can ever hope for in any comparison sort is O(n log (n))
