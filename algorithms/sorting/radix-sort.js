@@ -84,10 +84,22 @@ function mostDigits(arr) {
 
   for (let i = 0; i < arr.length; i++) {
     let digits = digitCount(arr[i]);
-    
+
     if (digits > highest) {
       highest = digits;
     }
   }
   return highest;
 }
+
+// Radix Sort Pseudocode
+// - Define a function that accepts list of numbers
+// - Figure out how many digits the largest number has (mostDigits helper function)
+// - Loop from k = 0 up to this largest number of digits
+// - For each iteration of the loop:
+//   - Create buckets for each digit (0 to 9) (a bucket is just an empty array)
+//   (We'll have an array that has ten sub arrays, and they all start empty)
+//   - Place each number in the corresponding bucket based on its kth digit (For example, the 0th on the first iteration) (Use getDigit function)
+// - Replace our existing array with values in our buckets, starting with 0 and going up to 9 (Concatenate into a new array)
+// - There's gonna be two loops, one outer, which happens 4 times for example, and one inner, to actually do something to each number in the list
+// - Return list at the end!
