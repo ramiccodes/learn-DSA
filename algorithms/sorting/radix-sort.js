@@ -71,3 +71,10 @@ function getDigit(num, place) {
   }
   return 0;
 }
+
+function digitCount(num) {
+  if (num === 0) {
+    return 1;
+  }
+  return num.toString().length;
+}
