@@ -50,3 +50,24 @@
 
 // Radix Sort is an integer sort because of a special property that allows us to sort numbers very fast compared
 // having to do comparisons
+
+// In order to implement radix  sort, it's helpful to build a few helper functions first:
+
+// getDigit(num, place) - returns the digit in num at the given place value
+
+// getDigit(12345, 0); // 5
+// getDigit(12345, 1); // 4
+// getDigit(12345, 2); // 3
+
+// (It starts from the left)
+// getDigit helper function is really important for sorting things into these buckets
+
+function getDigit(num, place) {
+  let reversed = num.toString().split('').reverse().join('');
+  for (let i = 0; i < reversed.length; i++) {
+    if (i === place) {
+      return parseInt(reversed[i]);
+    }
+  }
+  return 0;
+}
