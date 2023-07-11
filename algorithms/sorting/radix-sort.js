@@ -78,3 +78,16 @@ function digitCount(num) {
   }
   return num.toString().length;
 }
+
+function mostDigits(arr) {
+  let highest = 1;
+
+  for (let i = 0; i < arr.length; i++) {
+    let digits = digitCount(arr[i]);
+    
+    if (digits > highest) {
+      highest = digits;
+    }
+  }
+  return highest;
+}
