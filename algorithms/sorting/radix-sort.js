@@ -118,3 +118,16 @@ function radixSort(arr) {
   }
   return arr;
 }
+
+// Radix Sort Time Complexity
+
+// Time complexity - O(nk) - Linear time -  Worst case
+// Time complexity - O(nk) - Linear time - Best Case 
+// Time complexity - O(nk) - Linear time -  Average case
+// Space complexity - O(n + k)
+
+// n represents the number of numbers/integers we're sorting (length of the array)
+// k represents the length of those numbers (it's often called the word size (number of digits - average)) 
+
+// Why is this controversial?
+// It is because this can be significantly better on paper at least, than a comparison sort which the average time complexity is O(n log n)
