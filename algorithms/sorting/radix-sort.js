@@ -103,3 +103,18 @@ function mostDigits(arr) {
 // - Replace our existing array with values in our buckets, starting with 0 and going up to 9 (Concatenate into a new array)
 // - There's gonna be two loops, one outer, which happens 4 times for example, and one inner, to actually do something to each number in the list
 // - Return list at the end!
+
+function radixSort(arr) {
+  let maxDigits = mostDigits(arr);
+
+  for (let i = 0; i < maxDigits; i++) {
+    let buckets = [ [], [], [], [], [], [], [], [], [], [] ]
+
+    for (let j = 0; j < arr.length; j++) {
+      buckets[getDigit(arr[j], i)].push(arr[j]);
+    }
+
+    arr = [].concat(...buckets);
+  }
+  return arr;
+}
