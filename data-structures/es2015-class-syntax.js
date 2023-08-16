@@ -41,3 +41,64 @@ console.log(secondStudent.firstName)
 console.log(firstStudent.firstName)
 console.log(thirdStudent)
 console.log(thirdStudent.grade)
+
+
+// Instance methods
+// - SOmething we'll use much more within the course
+// - They provide functionality that pertains to a single instance of in our case a Student
+
+// For example, an array:
+let data = [1,2,3]
+data.push(4)
+// The above code is an example of a method that acts on the individual instance (data)
+
+class Student2 {
+  constructor(firstName, lastName, year) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.grade = year;
+    this.tardies = 0;
+    this.scores = [];
+  }
+  fullName(){
+    return `Your full name is ${this.firstName} ${this.lastName}`;
+  }
+  markLate(){
+    if (this.tardies >= 3) {
+      return "YOU ARE EXPELLED!!!"
+    }
+    this.tardies++;
+    return `${this.firstName} ${this.lastName} has been late ${this.tardies} ${this.tardies > 1 ? 'times.' : 'time.'}`;
+  }
+  addScore(score){
+    this.scores.push(score)
+    return this.scores
+  }
+  calculateAverage(){
+    let sum = this.scores.reduce((a,b) => {return a+b})
+    return sum / this.scores.length;
+  }
+}
+
+let fourthStudent = new Student2('Nikola', 'Tesla', 4)
+let fifthStudent = new Student2('Thomas', 'Edison', 4)
+console.log(fourthStudent.fullName())
+console.log(fifthStudent.fullName())
+
+// We can add a new method named markLate
+
+console.log(fourthStudent.tardies)
+console.log(fourthStudent.markLate())
+console.log(fourthStudent.tardies)
+console.log(fifthStudent.markLate())
+console.log(fifthStudent.markLate())
+console.log(fifthStudent.markLate())
+console.log(fifthStudent.tardies)
+console.log(fifthStudent.markLate())
+console.log(fifthStudent.markLate())
+console.log(fifthStudent.scores)
+fifthStudent.addScore(65)
+fifthStudent.addScore(77)
+fifthStudent.addScore(63)
+console.log(fifthStudent.scores)
+console.log(fifthStudent.calculateAverage())
