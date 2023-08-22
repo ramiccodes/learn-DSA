@@ -78,6 +78,10 @@ class Student2 {
     let sum = this.scores.reduce((a,b) => {return a+b})
     return sum / this.scores.length;
   }
+
+  static enrollStudent() {
+    console.log("ENROLLED!")
+  }
 }
 
 let fourthStudent = new Student2('Nikola', 'Tesla', 4)
@@ -102,3 +106,32 @@ fifthStudent.addScore(77)
 fifthStudent.addScore(63)
 console.log(fifthStudent.scores)
 console.log(fifthStudent.calculateAverage())
+
+
+// Adding Class Methods
+// We can use the static keyword in front of the method definition
+// It defines a static method for a class. They are called without instantiating their class
+// and cannot be called through a class instance
+// Example:
+// static enrollStudent(...students) {
+  // some code
+// }
+
+// To call the enrollStudent class method:
+// Student.enrollStudent()
+// Notice that we use the name of the class itself (first character uppercase)
+
+Student2.enrollStudent()
+
+// How we'll be using classes
+// class DataStructure() {
+//   constructor() {
+//     // What default properties should it have?
+//   }
+//   someInstanceMethod() {
+//     // What should each object created from this class be able to do?
+//   }
+// }
+
+// Inside all of our instance methods and constructor, the keyword 'this' refers to the 
+// object created from that class (also known as instance)
