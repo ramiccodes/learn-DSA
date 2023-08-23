@@ -83,3 +83,14 @@ console.log(list.push("HI"))
 console.log(list.push("YOU"))
 console.log(list.push("HUMAN"))
 
+// Popping
+// Removing a node from the end of a linked list
+// We have to traverse through the list to find out what is the second to the last node in order to make it our new tail
+
+// Popping Pseudocode
+// - If there are no nodes in the list, return undefined
+// - Loop through the list until you reach the tail
+// - Set the next property of the 2nd to last node to be null
+// - Set the tail to be the 2nd to last node
+// - Decrement the length of the list by 1
+// - Return the value of the node removed
