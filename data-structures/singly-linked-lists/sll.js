@@ -56,10 +56,17 @@ class SinglyLinkedList{
     this.tail = null;
     this.length = 0;
   }
-  // This push method should assign a new node and assign the value passed to head and tail if
-  // it is only the node that exists, otherwise, the previous node will be set as the head and the tail becomes the new node created
   push(val) {
-
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = this.head
+    } else {
+      this.tail.next = newNode;
+      this.tail = newNode
+    }
+    this.length++;
+    return this;
   }
 }
 
@@ -71,3 +78,8 @@ class SinglyLinkedList{
 // the newly created node
 // - Increment the length by one
 let list = new SinglyLinkedList();
+console.log(list);
+console.log(list.push("HI"))
+console.log(list.push("YOU"))
+console.log(list.push("HUMAN"))
+
