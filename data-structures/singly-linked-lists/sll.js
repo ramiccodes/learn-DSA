@@ -30,3 +30,44 @@
 // - Indexed in order!
 // - Insertion and deletion can be expensive (Adding or deleting elements means that all the other elements get reindexed)
 // - Can quickly be accessed at a specific index
+
+
+// Starter Code and Push Intro
+// Remember that a linked list is just a collection of nodes
+// Let's start by defining a class for each node
+
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
+
+let first = new Node("Hi");
+first.next = new Node("there");
+first.next.next = new Node("how");
+// This is a very bad way of representing a linked list because you have to keep writing .next when adding a new node
+
+
+// Remember that a linked list has a pointer to the head of the list and a pointer to the tail of the list and a length
+class SinglyLinkedList{
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+  // This push method should assign a new node and assign the value passed to head and tail if
+  // it is only the node that exists, otherwise, the previous node will be set as the head and the tail becomes the new node created
+  push(val) {
+
+  }
+}
+
+// Pushing Pseudocode
+// - This function should accept a value
+// - Create a new node using the value passed to the function
+// - If there is no head property on the list, set the head and tail to be the newly created node
+// - Otherwise, set the next property on the tail to be the new node and set the tail property on the list to be
+// the newly created node
+// - Increment the length by one
+let list = new SinglyLinkedList();
